@@ -6962,70 +6962,6 @@
     },
     {
       "categories": [
-        "Proxy",
-        "Tools"
-      ],
-      "description": "Nginx Proxy Manager v2 with sqlite and Goaccess Charts enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.  Please see the install document at https://github.com/pi-hosted/pi-hosted/tree/master/docs installing the template",
-      "env": [
-        {
-          "default": "1000",
-          "label": "PUID",
-          "name": "PUID"
-        },
-        {
-          "default": "1000",
-          "label": "PGID",
-          "name": "PGID"
-        },
-        {
-          "default": "America/New_York",
-          "label": "TZ",
-          "name": "TZ"
-        },
-        {
-          "default": "false",
-          "label": "SKIP_ARCHIVED_LOGS",
-          "name": "SKIP_ARCHIVED_LOGS",
-          "description": "Defaults to false. Set to true to skip archived logs, i.e. proxy-host*.gz"
-        },
-        {
-          "default": "false",
-          "label": "BASIC_AUTH",
-          "name": "BASIC_AUTH",
-          "description": "Defaults to false. Set to true to enable nginx basic authentication. Docker container needs to stopped or restarted each time this flag is modified. This allows for the .htpasswd file to be changed accordingly."
-        },
-        {
-          "default": "user",
-          "label": "BASIC_AUTH_USERNAME Ignore if Basic Auth set to false",
-          "name": "BASIC_AUTH_USERNAME",
-          "description": "(Optional) Requires BASIC_AUTH to bet set to true. Username for basic authentication."
-        },
-        {
-          "default": "Password",
-          "label": "BASIC_AUTH_PASSWORD Ignore if Basic Auth set to false",
-          "name": "BASIC_AUTH_PASSWORD",
-          "description": "(Optional) Requires BASIC_AUTH to bet set to true. Password for basic authentication."
-        }
-      ],
-      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/proxy_mgr.png",
-      "name": "nginx-proxy-manager-sqllite-goaccess",
-      "platform": "linux",
-      "ports": [
-        "80:80/tcp",
-        "81:81/tcp",
-        "443:443/tcp",
-        "7880:7880/tcp"
-      ],
-      "repository": {
-        "stackfile": "stack/nginx-proxy-manager-sqlite-goaccess.yml",
-        "url": "https://github.com/pi-hosted/pi-hosted"
-      },
-      "restart_policy": "unless-stopped",
-      "title": "Nginx Proxy Manager v2 with Sqlite and Goaccess Charts",
-      "type": 3
-    },
-    {
-      "categories": [
         "Other"
       ],
       "description": "This is an OpenVPN client docker container that uses recommended NordVPN server. It makes routing containers traffic through OpenVPN easy.",
@@ -7216,121 +7152,6 @@
           "container": "/config"
         }
       ]
-    },
-    {
-      "categories": [
-        "Other",
-        "Tools"
-      ],
-      "description": "Passbolt is a free and open source password manager designed for collaboration. With Passbolt you can securely generate, store, manage and monitor your team credentials. Get access to all of your logins and passwords from multiple browsers or even your mobile phone.",
-      "env": [
-        {
-          "default": "1000",
-          "description": "Enter your user's PUID here",
-          "label": "PUID",
-          "name": "PUID"
-        },
-        {
-          "default": "1000",
-          "description": "Enter your user's PGID here",
-          "label": "PGID",
-          "name": "PGID"
-        },
-        {
-          "default": "Europe/Zurich",
-          "description": "Enter your time zone here. See examples https://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
-          "label": "TZ",
-          "name": "TZ"
-        },
-        {
-          "default": "",
-          "description": "Enter your MySql root password here",
-          "label": "MYSQL_ROOT_PASSWORD",
-          "name": "MYSQL_ROOT_PASSWORD"
-        },
-        {
-          "default": "passbolt",
-          "description": "Enter your Passbolt database name here",
-          "label": "MYSQL_DATABASE",
-          "name": "MYSQL_DATABASE"
-        },
-        {
-          "default": "passbolt",
-          "description": "Enter your Passbolt database user here",
-          "label": "MYSQL_USER",
-          "name": "MYSQL_USER"
-        },
-        {
-          "default": "",
-          "description": "Enter your Passbolt database password here",
-          "label": "MYSQL_PASSWORD",
-          "name": "MYSQL_PASSWORD"
-        },
-        {
-          "default": "443",
-          "description": "Enter your Passbolt https port here",
-          "label": "PASSBOLT_PORT",
-          "name": "PASSBOLT_PORT"
-        },
-        {
-          "default": "https://passbolt.local",
-          "description": "Enter your full Passbolt https base URL here. Including port if different from 443",
-          "label": "PASSBOLT_URL",
-          "name": "PASSBOLT_URL"
-        },
-        {
-          "default": "Passbolt",
-          "description": "Enter your from email name",
-          "label": "EMAIL_FROM_NAME",
-          "name": "EMAIL_FROM_NAME"
-        },
-        {
-          "default": "",
-          "description": "Enter your from email address",
-          "label": "EMAIL_FROM_ADDRESS",
-          "name": "EMAIL_FROM_ADDRESS"
-        },
-        {
-          "default": "smtp.gmail.com",
-          "description": "Enter your email smtp server here",
-          "label": "EMAIL_SMTP_SERVER",
-          "name": "EMAIL_SMTP_SERVER"
-        },
-        {
-          "default": "587",
-          "description": "Enter your email smtp port here",
-          "label": "EMAIL_SMTP_PORT",
-          "name": "EMAIL_SMTP_PORT"
-        },
-        {
-          "default": "",
-          "description": "Enter your email username here",
-          "label": "EMAIL_USERNAME",
-          "name": "EMAIL_USERNAME"
-        },
-        {
-          "default": "",
-          "description": "Enter your email password here",
-          "label": "EMAIL_PASSWORD",
-          "name": "EMAIL_PASSWORD"
-        },
-        {
-          "default": "true",
-          "description": "Enter set TLS here",
-          "label": "EMAIL_TLS",
-          "name": "EMAIL_TLS"
-        }
-      ],
-      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/passbolt.png",
-      "name": "Passbolt",
-      "platform": "linux",
-      "repository": {
-        "stackfile": "stack/passbolt.yml",
-        "url": "https://github.com/pi-hosted/pi-hosted"
-      },
-      "restart_policy": "unless-stopped",
-      "title": "Passbolt",
-      "type": 3
     },
     {
       "categories": [
@@ -14738,21 +14559,6 @@
           "container": "/app"
         }
       ]
-    },
-    {
-      "categories": [
-        "Browsers"
-      ],
-      "description": "Firefox Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
-      "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/Firefox.png",
-      "name": "firefox",
-      "platform": "linux",
-      "repository": {
-        "stackfile": "Template/Stack/firefox.yml",
-        "url": "https://github.com/xneo1/portainer_templates"
-      },
-      "title": "Firefox",
-      "type": 3
     },
     {
       "categories": [
@@ -23782,61 +23588,6 @@
     },
     {
       "categories": [
-        "Other",
-        "Tools"
-      ],
-      "description": "InfluxDB is an open source time series database for recording metrics, events, and analytics.",
-      "env": [
-        {
-          "default": "setup",
-          "label": "DOCKER_INFLUXDB_INIT_MODE",
-          "name": "DOCKER_INFLUXDB_INIT_MODE"
-        },
-        {
-          "default": "your-initial-username",
-          "label": "DOCKER_INFLUXDB_INIT_USERNAME",
-          "name": "DOCKER_INFLUXDB_INIT_USERNAME"
-        },
-        {
-          "default": "your-initial-password",
-          "label": "DOCKER_INFLUXDB_INIT_PASSWORD",
-          "name": "DOCKER_INFLUXDB_INIT_PASSWORD"
-        },
-        {
-          "default": "your-initial-organisation",
-          "label": "DOCKER_INFLUXDB_INIT_ORG",
-          "name": "DOCKER_INFLUXDB_INIT_ORG"
-        },
-        {
-          "default": "your-initial-bucket",
-          "label": "DOCKER_INFLUXDB_INIT_BUCKET",
-          "name": "DOCKER_INFLUXDB_INIT_BUCKET"
-        }
-      ],
-      "hostname": "rpi-influxdb",
-      "image": "influxdb:latest",
-      "logo": "https://raw.githubusercontent.com/docker-library/docs/43d87118415bb75d7bb107683e79cd6d69186f67/influxdb/logo.png",
-      "name": "influxdb",
-      "platform": "linux",
-      "ports": [
-        "8086:8086/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "title": "Influxdb Latest",
-      "type": 1,
-      "volumes": [
-        {
-          "bind": "/portainer/Files/AppData/Config/Influxdb2/data",
-          "container": "/var/lib/influxdb2"
-        },
-        {
-          "bind": "/portainer/Files/AppData/Config/Influxdb2/config",
-          "container": "/etc/influxdb2"
-        }
-      ]
-    },
-    {
-      "categories": [
         "Videos",
         "Music"
       ],
@@ -25656,70 +25407,6 @@
           "container": "/config"
         }
       ]
-    },
-    {
-      "categories": [
-        "Proxy",
-        "Tools"
-      ],
-      "description": "Nginx Proxy Manager v2 with sqlite and Goaccess Charts enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.  Please see the install document at https://github.com/pi-hosted/pi-hosted/tree/master/docs installing the template",
-      "env": [
-        {
-          "default": "1000",
-          "label": "PUID",
-          "name": "PUID"
-        },
-        {
-          "default": "1000",
-          "label": "PGID",
-          "name": "PGID"
-        },
-        {
-          "default": "America/New_York",
-          "label": "TZ",
-          "name": "TZ"
-        },
-        {
-          "default": "false",
-          "label": "SKIP_ARCHIVED_LOGS",
-          "name": "SKIP_ARCHIVED_LOGS",
-          "description": "Defaults to false. Set to true to skip archived logs, i.e. proxy-host*.gz"
-        },
-        {
-          "default": "false",
-          "label": "BASIC_AUTH",
-          "name": "BASIC_AUTH",
-          "description": "Defaults to false. Set to true to enable nginx basic authentication. Docker container needs to stopped or restarted each time this flag is modified. This allows for the .htpasswd file to be changed accordingly."
-        },
-        {
-          "default": "user",
-          "label": "BASIC_AUTH_USERNAME Ignore if Basic Auth set to false",
-          "name": "BASIC_AUTH_USERNAME",
-          "description": "(Optional) Requires BASIC_AUTH to bet set to true. Username for basic authentication."
-        },
-        {
-          "default": "Password",
-          "label": "BASIC_AUTH_PASSWORD Ignore if Basic Auth set to false",
-          "name": "BASIC_AUTH_PASSWORD",
-          "description": "(Optional) Requires BASIC_AUTH to bet set to true. Password for basic authentication."
-        }
-      ],
-      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/proxy_mgr.png",
-      "name": "nginx-proxy-manager-sqllite-goaccess",
-      "platform": "linux",
-      "ports": [
-        "80:80/tcp",
-        "81:81/tcp",
-        "443:443/tcp",
-        "7880:7880/tcp"
-      ],
-      "repository": {
-        "stackfile": "stack/nginx-proxy-manager-sqlite-goaccess.yml",
-        "url": "https://github.com/pi-hosted/pi-hosted"
-      },
-      "restart_policy": "unless-stopped",
-      "title": "Nginx Proxy Manager v2 with Sqlite and Goaccess Charts",
-      "type": 3
     },
     {
       "categories": [
@@ -29411,52 +29098,6 @@
       "restart_policy": "unless-stopped",
       "title": "Nginx Proxy Manager v2 with Sqlite and Goaccess Charts",
       "type": 3
-    },
-    {
-      "categories": [
-        "Proxy",
-        "Tools"
-      ],
-      "description": "Nginx Proxy Manager v2 with Sqlite enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.  Please see the install document at https://github.com/pi-hosted/pi-hosted/tree/master/docs installing the template",
-      "env": [
-        {
-          "default": "1000",
-          "label": "PUID",
-          "name": "PUID"
-        },
-        {
-          "default": "1000",
-          "label": "PGID",
-          "name": "PGID"
-        },
-        {
-          "default": "America/New_York",
-          "label": "TZ",
-          "name": "TZ"
-        }
-      ],
-      "image": "jc21/nginx-proxy-manager:latest",
-      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/proxy_mgr.png",
-      "name": "nginx-proxy-manager-sqlite",
-      "platform": "linux",
-      "ports": [
-        "80:80/tcp",
-        "81:81/tcp",
-        "443:443/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "title": "Nginx Proxy Manager v2 with Sqllite",
-      "type": 1,
-      "volumes": [
-        {
-          "bind": "/portainer/Files/AppData/Config/nginx-proxy-manager/data",
-          "container": "/data"
-        },
-        {
-          "bind": "/portainer/Files/AppData/Config/nginx-proxy-manager/letsencrypt",
-          "container": "/etc/letsencrypt"
-        }
-      ]
     },
     {
       "categories": [
